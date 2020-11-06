@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Runtime Terror</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/img/favicon.png') }}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="{{ url_for('static', filename='assets/img/google-symbol.png') }}" alt="" /></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ml-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/logout">Logout</a></li>
+        
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <body id="page-top">
+    
+    <!-- Masthead-->
+    <!-- <a style = "margin:25px" href="/" <button class="btn btn-primary float-right">Logout</button></a> -->
+    <header class="masthead">
+      <div class="container">
+        <div class="masthead-subheading">Welcome Admin</div>
+        <div class="masthead-heading text-uppercase">Manage Users</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+<!-- <a href="/edit/0"> <button class="btn btn-primary">New Post</button></a> -->
+<hr>
+
+<h1>Registered Users</h1>
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Password</th>
+        <th>date</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for x in users %}
+      <tr>
+        <td>{{x.sno}}</td>
+        <td>{{x.f_name}}</td>
+        <td>{{x.l_name}}</td>
+        <td>{{x.email}}</td>
+        <td>{{x.phone}}</td>
+        <td>{{x.password}}</td>
+        <td>{{x.date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <hr>
+  <!-- Pager -->
+  <div class="clearfix">
+    <a class="btn btn-primary float-right" href="#"> &rarr; Next</a>
+    <a class="btn btn-primary float-left" href="#"> &larr; Previous</a>
+  </div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<hr>
+        
+          <h1>Gmail</h1>
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Name</th>
+        <th>sender email</th>
+        <th>reciever email</th>
+        <th>subject</th>
+        <th>message</th>
+        <th>date</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for gmail1 in gmails %}
+      <tr>
+        <td>{{gmail1.sno}}</td>
+        <td>{{gmail1.name}}</td>
+        <td>{{gmail1.s_email}}</td>
+        <td>{{gmail1.r_email}}</td>
+        <td>{{gmail1.subject}}</td>
+        <td>{{gmail1.message}}</td>
+        <td>{{gmail1.date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#"> &rarr; Next</a>
+          <a class="btn btn-primary float-left" href="#"> &larr; Previous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+<!-- <a href="/edit/0"> <button class="btn btn-primary">New Post</button></a> -->
+<!-- <a href="/logout"> <button class="btn btn-primary float-right">Logout</button></a> -->
+<hr>
+        <!-- <h1>File Uploader</h1>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+          <input type="file" name="file1">
+          <button type="submit" class="btn btn-primary">Submit</button> -->
+
+          </form>
+          <h1>Youtube</h1>
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Email</th>
+        <th>Search</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for youtubes1 in youtubes %}
+      <tr>
+        <td>{{youtubes1.sno}}</td>
+        <td>{{youtubes1.email}}</td>
+        <td>{{youtubes1.search}}</td>
+        <td>{{youtubes1.date}}</td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#"> &rarr; Next</a>
+          <a class="btn btn-primary float-left" href="#"> &larr; Previous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+<hr>
+        <!-- <h1>File Uploader</h1>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+          <input type="file" name="file1">
+          <button type="submit" class="btn btn-primary">Submit</button> -->
+
+          </form>
+          <h1>Maps</h1>
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Start Point</th>
+        <th>Destination Point</th>
+        <th>Mode</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for maps1 in maps %}
+      <tr>
+        <td>{{maps1.sno}}</td>
+        <td>{{maps1.start}}</td>
+        <td>{{maps1.dest}}</td>
+        <td>{{maps1.mode}}</td>
+        <td>{{maps1.date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#"> &rarr; Next</a>
+          <a class="btn btn-primary float-left" href="#"> &larr; Previous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+<!-- <a href="/edit/0"> <button class="btn btn-primary">New Post</button></a>
+<a href="/logout"> <button class="btn btn-primary float-right">Logout</button></a> -->
+<hr>
+        <!-- <h1>File Uploader</h1>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+          <input type="file" name="file1">
+          <button type="submit" class="btn btn-primary">Submit</button> -->
+
+          </form>
+          <h1>Translate</h1>
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Email</th>
+        <th>Format</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for translates1 in translates %}
+      <tr>
+        <td>{{translates1.sno}}</td>
+        <td>{{translates1.email}}</td>
+        <td>{{translates1.format}}</td>
+        <td>{{translates1.date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#"> &rarr; Next</a>
+          <a class="btn btn-primary float-left" href="#"> &larr; Previous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+<!-- <a href="/edit/0"> <button class="btn btn-primary">New Post</button></a>
+<a href="/logout"> <button class="btn btn-primary float-right">Logout</button></a> -->
+<!-- <hr>
+        <h1>File Uploader</h1>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+          <input type="file" name="file1">
+          <button type="submit" class="btn btn-primary">Submit</button> -->
+
+          </form>
+          <h1>Ads</h1>
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for adss1 in adss %}
+      <tr>
+        <td>{{adss1.sno}}</td>
+        <td>{{adss1.email}}</td>
+        <td>{{adss1.name}}</td>
+        <td>{{adss1.date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#"> &rarr; Next</a>
+          <a class="btn btn-primary float-left" href="#"> &larr; Previous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+<!-- <a href="/edit/0"> <button class="btn btn-primary">New Post</button></a>
+<a href="/logout"> <button class="btn btn-primary float-right">Logout</button></a> -->
+<hr>
+        <!-- <h1>File Uploader</h1>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+          <input type="file" name="file1">
+          <button type="submit" class="btn btn-primary">Submit</button> -->
+
+          </form>
+          <h1>Youtube Music</h1>
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Email</th>
+        <th>Search</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ytmusics1 in ytmusics %}
+      <tr>
+        <td>{{ytmusics1.sno}}</td>
+        <td>{{ytmusics1.email}}</td>
+        <td>{{ytmusics1.search}}</td>
+        <td>{{ytmusics1.date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#"> &rarr; Next</a>
+          <a class="btn btn-primary float-left" href="#"> &larr; Previous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Third party plugin JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="{{ url_for('static', filename='js/scripts.js') }} "></script>
+</body>
+
+</html>
